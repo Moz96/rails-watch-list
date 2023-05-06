@@ -1,0 +1,11 @@
+<h1 class="display-4 text-center my-5"> Look at these cool lists <h1>
+<div class="container">
+ <div class="row">
+    <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list) %></li>
+    <% end %>
+    <div class="button">
+      <%= link_to "Create list", new_list_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
