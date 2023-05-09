@@ -6,8 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning database"
+puts "Cleaning database"
 
+Bookmark.destroy_all
+List.destroy_all
 Movie.destroy_all
+
+puts "Creating Lists"
+
+girl_power = List.create(name: "Girl Power")
+classics = List.create(name: "Classics")
+comedy = List.create(name: "Comedy")
+drama = List.create(name: "Drama")
+to_rewatch = List.create(name: "To Rewatch")
 
 puts "Creating Movies"
 
