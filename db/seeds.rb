@@ -14,7 +14,7 @@ Movie.destroy_all
 
 puts "Creating Lists"
 
-girl_power = List.create(name: "Girl Power")
+cool_films = List.create(name: "Cool films")
 classics = List.create(name: "Classics")
 comedy = List.create(name: "Comedy")
 drama = List.create(name: "Drama")
