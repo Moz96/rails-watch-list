@@ -1,11 +1,23 @@
-<h1 class="display-4 text-center my-5"> Look at these cool lists <h1>
-<div class="container">
- <div class="row">
-    <% @lists.each do |list| %>
-      <li><%= link_to list.name, list_path(list) %></li>
-    <% end %>
-    <div class="button">
-      <%= link_to "Create list", new_list_path, class: "btn btn-primary" %>
+<section class="lists">
+  <div class="container">
+    <div class="row">
+      <div class="col" align="center">
+      <h2>Check out these cool lists</h2>
+          <%= cl_image_tag("https://res.cloudinary.com/dwang9o22/image/upload/v1683707648/c3ct43rcb017g2ule8wk.jpg",
+          width: 400, height: 300, crop: :fill, alt: "Cool lists image", class: "mb-3") %>
+
+      </div>
     </div>
-  </div>
-</div>
+    <div class="row mb-5">
+      <% @lists.each do |list| %>
+        <div class="col-6 mb-2">
+          <div class="bg-white rounded shadow">
+            <div class="p-3 d-flex flex-column">
+              <h5><%= link_to list.name, list_path(list) %></h5>
+              <span class="movie-tag"><%= pluralize(list.movies.size, "movie") %></span>
+            </div>
+      </div>
+    </div>
+    <% end %>
+    <%= link_to "New List", new_list_path, class: "btn btn-secondary" %>
+</section>
